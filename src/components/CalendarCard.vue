@@ -9,10 +9,13 @@ const now = ref(new Date())
 let timer = null
 
 onMounted(() => {
-  // Update every minute to check for date change
+  // Check every second to ensure we catch the midnight change immediately
   timer = setInterval(() => {
-    now.value = new Date()
-  }, 60000)
+    const current = new Date()
+    if (current.getDate() !== now.value.getDate()) {
+      now.value = current
+    }
+  }, 1000)
 })
 
 onUnmounted(() => {

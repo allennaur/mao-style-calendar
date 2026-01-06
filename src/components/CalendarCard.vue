@@ -1,11 +1,23 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { Solar } from 'lunar-javascript'
 import quotes from '../assets/quotes.json'
 import footerImg from '../assets/footer_v2.png'
 import paperBg from '../assets/paper.png'
 
 const now = ref(new Date())
+let timer = null
+
+onMounted(() => {
+  // Update every minute to check for date change
+  timer = setInterval(() => {
+    now.value = new Date()
+  }, 60000)
+})
+
+onUnmounted(() => {
+  if (timer) clearInterval(timer)
+})
 
 // Date parts
 const day = computed(() => now.value.getDate().toString().padStart(2, '0'))

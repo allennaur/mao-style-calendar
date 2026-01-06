@@ -7,9 +7,10 @@
 
 body {
   margin: 0;
-  font-family: "Songti SC", "SimSun", serif;
+  font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
   background-color: #333;
   color: var(--text-black);
+
   display: flex;
   justify-content: center;
   align-items: center;

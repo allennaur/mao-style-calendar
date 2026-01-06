@@ -114,9 +114,10 @@ const quote = computed(() => {
   line-height: 1;
   font-weight: bold;
   color: #8b3a3a; /* Muted red */
-  font-family: "Impact", "Arial Black", sans-serif;
-  letter-spacing: -5px;
+  font-family: "Anton", "Impact", "Arial Black", sans-serif;
+  letter-spacing: 2px; /* Increased letter spacing for Anton */
 }
+
 
 .month-badge {
   writing-mode: vertical-rl;
